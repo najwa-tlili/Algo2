@@ -1,0 +1,61 @@
+Algorithme somme 
+description ;
+
+Var
+set1 : tab;
+set2 : tab;
+
+Begin
+print("saisie la taille set1");
+lire(n)
+print("saisie la taille set2");
+lire(m)
+
+FOR i FROM 0 TO n STEP i++  DO
+  print("saisie un entier");
+  lire(set1[i])  ;
+END_FOR
+
+For i FROM 0 TO m STEP i++  DO
+  print("saisie un entier");
+  lire(set2[i])  ;
+END_FOR
+
+result:=0;
+
+FOR i FROM 0 TO n STEP i++  DO
+ tr=flase;
+ j=0;
+ WHILE (tr= false and j < set2.length) DO
+    IF (set1[i]==set2[j]) then
+    tr=true;
+    
+    ELSE
+        j++;
+    END_IF
+ END_WHILE
+ if j=>set2.length and tr=false then
+ result+=set1[i];
+ END_IF
+
+END_FOR
+FOR i FROM 0 TO m STEP i++  DO
+ tr=flase;
+ j=0;
+ WHILE (tr= false and j < set1.length) DO
+    IF (set2[i]==set1[j]) then
+    tr=true;
+    
+    ELSE
+        j++;
+    END_IF
+ END_WHILE
+ if j==set1.length and tr=false then
+ result+=set2[i];
+ end if
+
+END_FOR
+
+
+print(result);
+end
